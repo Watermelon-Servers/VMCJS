@@ -60,3 +60,15 @@ exports.numberOfPersistentDomains = function(callback) {
         });
     });
 }
+
+exports.freeMemory = function(callback) {
+    hypervisor_object.connect(function(err) {
+        if(err) { console.log(err); callback(true); return; }
+        console.log("Connected to Hypervisor : qemu"); 
+        hypervisor_object.getNodeFreeMemory(function(err, info) {
+            if(err) { console.log(err); callback(true); return; }
+            // console.log(info); 
+            callback(false, info);
+        });
+    });
+}

@@ -42,4 +42,11 @@ router.get("/domains/count/persistent", (req, res) => {
     });
 })
 
+router.get("/fram", (req, res) => {
+    hypervisor.freeMemory(function(err, info) {
+        if (err) { res.send(500, "Server Error"); return; }
+        res.send(200, info);
+    });
+})
+
 module.exports = router;
