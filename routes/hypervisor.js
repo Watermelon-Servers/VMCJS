@@ -9,43 +9,43 @@ router.get("/", (req, res) => {
 
 router.get("/statistics", (req, res) => {
     hypervisor.statistics(function(err, info) {
-        if (err) { res.send(500, "Server Error"); return; }
-        res.send(200, info);
+        if (err) { res.status(500).send("Server Error"); return; }
+        res.status(200).send(info);
     });
 })
 
 router.get("/domains", (req, res) => {
     hypervisor.activeDomains(function(err, info) {
-        if (err) { res.send(500, "Server Error"); return; }
-        res.send(200, info);
+        if (err) { res.status(500).send("Server Error"); return; }
+        res.status(200).send(info);
     });
 })
 
 router.get("/domains/persistent", (req, res) => {
     hypervisor.persistentDomains(function(err, info) {
-        if (err) { res.send(500, "Server Error"); return; }
-        res.send(200, info);
+        if (err) { res.status(500).send("Server Error"); return; }
+        res.status(200).send(info);
     });
 })
 
 router.get("/domains/count", (req, res) => {
     hypervisor.numberOfActiveDomains(function(err, info) {
-        if (err) { res.send(500, "Server Error"); return; }
-        res.send(200, info);
+        if (err) { res.status(500).send("Server Error"); return; }
+        res.status(200).send(info);
     });
 })
 
 router.get("/domains/count/persistent", (req, res) => {
     hypervisor.numberOfPersistentDomains(function(err, info) {
-        if (err) { res.send(500, "Server Error"); return; }
-        res.send(200, info);
+        if (err) { res.status(500).send("Server Error"); return; }
+        res.status(200).send(info);
     });
 })
 
 router.get("/fram", (req, res) => {
     hypervisor.freeMemory(function(err, info) {
-        if (err) { res.send(500, "Server Error"); return; }
-        res.send(200, info);
+        if (err) { res.status(500).send("Server Error"); return; }
+        res.status(200).send(info);
     });
 })
 
