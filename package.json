@@ -1,0 +1,19 @@
+{
+  "name": "vmcjs",
+  "version": "0.0.1",
+  "description": "VMCJS is a Hyper-V Controller REST API",
+  "main": "vmcjs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joseph Shenton",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-formidable": "^1.2.0",
+    "node-powershell": "^4.0.0",
+    "sanitize": "^2.1.0"
+  }
+}
