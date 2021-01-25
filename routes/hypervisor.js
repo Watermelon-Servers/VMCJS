@@ -10,21 +10,21 @@ router.get("/", (req, res) => {
 router.get("/statistics", (req, res) => {
     hypervisor.statistics(function(err, info) {
         if (err) { res.send(500, "Server Error"); return; }
-        res.send(info);
+        res.send(200, info);
     });
 })
 
 router.get("/domains", (req, res) => {
     hypervisor.activeDomains(function(err, info) {
         if (err) { res.send(500, "Server Error"); return; }
-        res.send(info);
+        res.send(200, info);
     });
 })
 
 router.get("/domains/persistent", (req, res) => {
     hypervisor.persistentDomains(function(err, info) {
         if (err) { res.send(500, "Server Error"); return; }
-        res.send(info);
+        res.send(200, info);
     });
 })
 
