@@ -25,11 +25,35 @@ exports.activeDomains = function(callback) {
     });
 }
 
-exports.definedDomains = function(callback) {
+exports.persistentDomains = function(callback) {
     hypervisor_object.connect(function(err) {
         if(err) { console.log(err); callback(true); return; }
         console.log("Connected to Hypervisor : qemu"); 
         hypervisor_object.listDefinedDomains(function(err, info) {
+            if(err) { console.log(err); callback(true); return; }
+            // console.log(info); 
+            callback(false, info);
+        });
+    });
+}
+
+exports.numberOfActiveDomains = function(callback) {
+    hypervisor_object.connect(function(err) {
+        if(err) { console.log(err); callback(true); return; }
+        console.log("Connected to Hypervisor : qemu"); 
+        hypervisor_object.getNumberOfActiveDomains(function(err, info) {
+            if(err) { console.log(err); callback(true); return; }
+            // console.log(info); 
+            callback(false, info);
+        });
+    });
+}
+
+exports.numberOfPersistentDomains = function(callback) {
+    hypervisor_object.connect(function(err) {
+        if(err) { console.log(err); callback(true); return; }
+        console.log("Connected to Hypervisor : qemu"); 
+        hypervisor_object.getNumberOfDefinedDomains(function(err, info) {
             if(err) { console.log(err); callback(true); return; }
             // console.log(info); 
             callback(false, info);

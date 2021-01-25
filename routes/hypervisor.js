@@ -22,7 +22,21 @@ router.get("/domains", (req, res) => {
 })
 
 router.get("/domains/persistent", (req, res) => {
-    hypervisor.definedDomains(function(err, info) {
+    hypervisor.persistentDomains(function(err, info) {
+        if (err) { res.send(500, "Server Error"); return; }
+        res.send(info);
+    });
+})
+
+router.get("/domains/count", (req, res) => {
+    hypervisor.numberOfActiveDomains(function(err, info) {
+        if (err) { res.send(500, "Server Error"); return; }
+        res.send(info);
+    });
+})
+
+router.get("/domains/count/persistent", (req, res) => {
+    hypervisor.numberOfPersistentDomains(function(err, info) {
         if (err) { res.send(500, "Server Error"); return; }
         res.send(info);
     });
