@@ -27,3 +27,5 @@ router.get("/domains/persistent", (req, res) => {
         res.send(info);
     });
 })
+
+module.exports = router;
