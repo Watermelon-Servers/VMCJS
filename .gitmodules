@@ -1,0 +1,3 @@
+[submodule "node-libvirt"]
+	path = node-libvirt
+	url = git://github.com/hooklift/node-libvirt.git
