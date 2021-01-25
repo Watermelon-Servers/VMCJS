@@ -31,14 +31,14 @@ router.get("/domains/persistent", (req, res) => {
 router.get("/domains/count", (req, res) => {
     hypervisor.numberOfActiveDomains(function(err, info) {
         if (err) { res.send(500, "Server Error"); return; }
-        res.send(info);
+        res.send(200, info);
     });
 })
 
 router.get("/domains/count/persistent", (req, res) => {
     hypervisor.numberOfPersistentDomains(function(err, info) {
         if (err) { res.send(500, "Server Error"); return; }
-        res.send(info);
+        res.send(200, info);
     });
 })
 
