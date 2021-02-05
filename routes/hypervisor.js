@@ -46,6 +46,7 @@ router.get("/fram", (req, res) => {
     hypervisor.freeMemory(function(err, info) {
         if (err) { res.status(500).send("Server Error"); return; }
         res.status(200).send(info);
+        
     });
 })
 
